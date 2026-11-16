@@ -170,7 +170,7 @@ docs/       icon and documentation assets
 
 ## Credits
 
-Based on [UABE-Android](https://github.com/elfilibusterismo/UABE-Android). Built with UnityPy, Texture2DDecoder, etcpak, astc-encoder, libogg, libvorbis, python-fsb5, BeeWare's Python-Apple-support and XcodeGen. Licenses are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
+UnityPy, Texture2DDecoder, etcpak, astc-encoder, libogg, libvorbis, python-fsb5, BeeWare's Python-Apple-support and XcodeGen. Licenses are listed in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
 
 Developer: [@frezcode on TikTok](https://www.tiktok.com/@frezcode)
 
