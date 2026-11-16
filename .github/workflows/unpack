@@ -1,0 +1,34 @@
+name: Unpack source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Unpack
+        run: |
+          set -e
+          test -f UABE-iOS.zip
+          rm -rf UABE-iOS
+          unzip -q UABE-iOS.zip
+          rsync -a --exclude .github UABE-iOS/ ./
+          rm -rf UABE-iOS UABE-iOS.zip
+
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Add source"
+          git push
